@@ -92,11 +92,12 @@
         <!--New Place-->
         <scene sceneID="231-JY-WqX">
             <objects>
-                <tableViewController id="Svd-kc-bSa" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pRc-GS-yT1">
+                <tableViewController id="Svd-kc-bSa" customClass="NewPlaceTableViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pRc-GS-yT1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="w6g-XP-aQm">
                                 <cells>
@@ -120,26 +121,29 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="Sgq-mH-E22">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="Sgq-mH-E22">
                                         <rect key="frame" x="0.0" y="278" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sgq-mH-E22" id="Ib2-EJ-JQU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gHT-tC-nGx">
-                                                    <rect key="frame" x="16" y="8" width="343" height="59"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gHT-tC-nGx">
+                                                    <rect key="frame" x="16" y="8" width="343" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLN-yl-1ao">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="26"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c9g-xt-3BW">
-                                                            <rect key="frame" x="0.0" y="25" width="343" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c9g-xt-3BW">
+                                                            <rect key="frame" x="0.0" y="34" width="343" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Svd-kc-bSa" id="dLS-cC-X4g"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -148,62 +152,68 @@
                                                 <constraint firstItem="gHT-tC-nGx" firstAttribute="leading" secondItem="Ib2-EJ-JQU" secondAttribute="leading" constant="16" id="1jO-LM-5HI"/>
                                                 <constraint firstItem="gHT-tC-nGx" firstAttribute="top" secondItem="Ib2-EJ-JQU" secondAttribute="top" constant="8" id="98f-Wx-WtK"/>
                                                 <constraint firstAttribute="trailing" secondItem="gHT-tC-nGx" secondAttribute="trailing" constant="16" id="Osl-9j-GLE"/>
-                                                <constraint firstAttribute="bottom" secondItem="gHT-tC-nGx" secondAttribute="bottom" constant="8" id="Y6r-Wb-1dY"/>
+                                                <constraint firstAttribute="bottom" secondItem="gHT-tC-nGx" secondAttribute="bottom" constant="4" id="Y6r-Wb-1dY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="toA-DP-gXd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="toA-DP-gXd">
                                         <rect key="frame" x="0.0" y="353" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="toA-DP-gXd" id="lwc-d7-T6K">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xTj-Rx-fSp">
-                                                    <rect key="frame" x="16" y="8" width="343" height="59"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xTj-Rx-fSp">
+                                                    <rect key="frame" x="16" y="8" width="343" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4l-Ef-nUQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="26"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enJ-Ze-e21">
-                                                            <rect key="frame" x="0.0" y="25" width="343" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enJ-Ze-e21">
+                                                            <rect key="frame" x="0.0" y="34" width="343" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Svd-kc-bSa" id="Of1-E7-C2n"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="xTj-Rx-fSp" secondAttribute="bottom" constant="8" id="GH6-9P-ueR"/>
+                                                <constraint firstAttribute="bottom" secondItem="xTj-Rx-fSp" secondAttribute="bottom" constant="4" id="GH6-9P-ueR"/>
                                                 <constraint firstItem="xTj-Rx-fSp" firstAttribute="leading" secondItem="lwc-d7-T6K" secondAttribute="leading" constant="16" id="GVX-y8-G8c"/>
                                                 <constraint firstAttribute="trailing" secondItem="xTj-Rx-fSp" secondAttribute="trailing" constant="16" id="J29-2F-xqB"/>
                                                 <constraint firstItem="xTj-Rx-fSp" firstAttribute="top" secondItem="lwc-d7-T6K" secondAttribute="top" constant="8" id="mVo-bH-gZp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="qQz-BR-3qW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="qQz-BR-3qW">
                                         <rect key="frame" x="0.0" y="428" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qQz-BR-3qW" id="tJY-BU-y4H">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CzJ-jZ-jYe">
-                                                    <rect key="frame" x="16" y="8" width="343" height="59"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CzJ-jZ-jYe">
+                                                    <rect key="frame" x="16" y="8" width="343" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-g9-AFE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="26"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKZ-1q-Efo">
-                                                            <rect key="frame" x="0.0" y="25" width="343" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKZ-1q-Efo">
+                                                            <rect key="frame" x="0.0" y="34" width="343" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Svd-kc-bSa" id="gxb-rN-cZc"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -211,7 +221,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="CzJ-jZ-jYe" secondAttribute="trailing" constant="16" id="7sP-vx-80S"/>
                                                 <constraint firstItem="CzJ-jZ-jYe" firstAttribute="leading" secondItem="tJY-BU-y4H" secondAttribute="leading" constant="16" id="OWW-KB-N41"/>
-                                                <constraint firstAttribute="bottom" secondItem="CzJ-jZ-jYe" secondAttribute="bottom" constant="8" id="h1y-Qp-sjU"/>
+                                                <constraint firstAttribute="bottom" secondItem="CzJ-jZ-jYe" secondAttribute="bottom" constant="4" id="h1y-Qp-sjU"/>
                                                 <constraint firstItem="CzJ-jZ-jYe" firstAttribute="top" secondItem="tJY-BU-y4H" secondAttribute="top" constant="8" id="mj6-Iw-zTi"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -232,6 +242,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="gh5-lJ-bcP"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageOfPlace" destination="qTz-eV-agc" id="XJs-hP-IoX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHG-WD-Ujv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="8FB-Tw-WAW" userLabel="Exit" sceneMemberID="exit"/>
