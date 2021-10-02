@@ -188,7 +188,6 @@ extension NewPlaceTableViewController: UITextFieldDelegate {
             }
           
         }
-    
 }
 
 extension NewPlaceTableViewController: MapViewControllerDelegate {
