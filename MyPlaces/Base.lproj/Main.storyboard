@@ -30,12 +30,25 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="qTz-eV-agc">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcb-G3-ag8">
+                                                    <rect key="frame" x="344" y="189" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="99D-VG-eA9"/>
+                                                        <constraint firstAttribute="height" constant="50" id="ySM-xk-35C"/>
+                                                    </constraints>
+                                                    <state key="normal" image="map"/>
+                                                    <connections>
+                                                        <segue destination="KnJ-bv-AKM" kind="presentation" identifier="showMap" id="jeO-x7-xSs"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                             <constraints>
                                                 <constraint firstItem="qTz-eV-agc" firstAttribute="leading" secondItem="LVn-l6-cDy" secondAttribute="leading" id="JND-WU-6ok"/>
+                                                <constraint firstItem="bcb-G3-ag8" firstAttribute="bottom" secondItem="LVn-l6-cDy" secondAttribute="bottomMargin" id="a4x-15-tc7"/>
                                                 <constraint firstItem="qTz-eV-agc" firstAttribute="top" secondItem="LVn-l6-cDy" secondAttribute="top" id="gHj-WN-dX7"/>
                                                 <constraint firstAttribute="bottom" secondItem="qTz-eV-agc" secondAttribute="bottom" id="gMz-5I-ZX1"/>
+                                                <constraint firstItem="bcb-G3-ag8" firstAttribute="trailing" secondItem="LVn-l6-cDy" secondAttribute="trailingMargin" id="lPl-Ge-tmZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="qTz-eV-agc" secondAttribute="trailing" id="x4K-TT-HPK"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -187,13 +200,56 @@
                         <outlet property="placeLocation" destination="enJ-Ze-e21" id="IVf-ri-Y8l"/>
                         <outlet property="placeName" destination="c9g-xt-3BW" id="g4M-b3-yX5"/>
                         <outlet property="placeType" destination="pKZ-1q-Efo" id="xSW-XB-2Gw"/>
+                        <outlet property="ratingControl" destination="5cw-jZ-O18" id="F1F-aY-Tjd"/>
                         <outlet property="saveButton" destination="gh5-lJ-bcP" id="fCF-d1-yd3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHG-WD-Ujv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="8FB-Tw-WAW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1463" y="119"/>
+            <point key="canvasLocation" x="1462.3188405797102" y="118.52678571428571"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="eOH-1d-XxN">
+            <objects>
+                <viewController id="KnJ-bv-AKM" customClass="MapViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4iV-3U-TKO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="p9X-ju-Fmd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sl-0n-oLP">
+                                <rect key="frame" x="344" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Omi-Hu-xH3"/>
+                                    <constraint firstAttribute="height" constant="30" id="pUJ-6N-8hJ"/>
+                                </constraints>
+                                <state key="normal" image="camcel"/>
+                                <connections>
+                                    <action selector="closeVC" destination="KnJ-bv-AKM" eventType="touchUpInside" id="y7j-Oc-jeo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="734-DH-7ig"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p9X-ju-Fmd" firstAttribute="top" secondItem="4iV-3U-TKO" secondAttribute="top" id="0c2-SX-guA"/>
+                            <constraint firstItem="p9X-ju-Fmd" firstAttribute="trailing" secondItem="734-DH-7ig" secondAttribute="trailing" id="K77-Kb-heB"/>
+                            <constraint firstItem="734-DH-7ig" firstAttribute="trailing" secondItem="6sl-0n-oLP" secondAttribute="trailing" constant="40" id="Moa-h9-JLk"/>
+                            <constraint firstItem="p9X-ju-Fmd" firstAttribute="leading" secondItem="734-DH-7ig" secondAttribute="leading" id="Npa-HQ-OIt"/>
+                            <constraint firstItem="6sl-0n-oLP" firstAttribute="top" secondItem="734-DH-7ig" secondAttribute="top" constant="40" id="dZA-QB-GOa"/>
+                            <constraint firstAttribute="bottom" secondItem="p9X-ju-Fmd" secondAttribute="bottom" id="wxN-a7-pBd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="p9X-ju-Fmd" id="gL9-aS-JNZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7u-K8-UTH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2286.9565217391305" y="116.51785714285714"/>
         </scene>
         <!--My Places-->
         <scene sceneID="2DY-sh-YbU">
@@ -223,40 +279,57 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="aVt-Ez-lVG">
-                                                    <rect key="frame" x="96" y="8" width="302" height="69"/>
+                                                    <rect key="frame" x="96" y="8" width="212" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7m-7H-HDM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="212" height="24"/>
                                                             <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qry-nP-zmu">
-                                                            <rect key="frame" x="0.0" y="27" width="302" height="20"/>
+                                                            <rect key="frame" x="0.0" y="27" width="212" height="20"/>
                                                             <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMD-rB-jbp">
-                                                            <rect key="frame" x="0.0" y="50" width="302" height="19"/>
+                                                            <rect key="frame" x="0.0" y="50" width="212" height="19"/>
                                                             <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="90" placeholderIntrinsicHeight="14" translatesAutoresizingMaskIntoConstraints="NO" id="8Ks-Rw-sDx" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="316" y="35.5" width="90" height="14"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="byf-LU-6rT"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="eiN-Ii-9HI" firstAttribute="top" secondItem="lai-2T-Kuz" secondAttribute="top" constant="10" id="GEp-xO-gEl"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Ks-Rw-sDx" secondAttribute="trailing" constant="8" id="NdC-1D-qFh"/>
+                                                <constraint firstItem="8Ks-Rw-sDx" firstAttribute="centerY" secondItem="lai-2T-Kuz" secondAttribute="centerY" id="Pag-eO-yeu"/>
                                                 <constraint firstAttribute="bottom" secondItem="aVt-Ez-lVG" secondAttribute="bottom" constant="8" id="T1w-8z-jpj"/>
                                                 <constraint firstItem="eiN-Ii-9HI" firstAttribute="leading" secondItem="lai-2T-Kuz" secondAttribute="leading" constant="15" id="Usu-nR-AU1"/>
                                                 <constraint firstItem="eiN-Ii-9HI" firstAttribute="centerY" secondItem="lai-2T-Kuz" secondAttribute="centerY" id="bsP-nL-YGH"/>
                                                 <constraint firstItem="aVt-Ez-lVG" firstAttribute="leading" secondItem="eiN-Ii-9HI" secondAttribute="trailing" constant="16" id="gVQ-Hd-tIu"/>
-                                                <constraint firstAttribute="trailing" secondItem="aVt-Ez-lVG" secondAttribute="trailing" constant="16" id="j3l-h6-8E7"/>
                                                 <constraint firstItem="aVt-Ez-lVG" firstAttribute="top" secondItem="lai-2T-Kuz" secondAttribute="top" constant="8" id="k4n-Ck-emY"/>
+                                                <constraint firstItem="8Ks-Rw-sDx" firstAttribute="leading" secondItem="aVt-Ez-lVG" secondAttribute="trailing" constant="8" id="zUP-LS-GAR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cosmosView" destination="8Ks-Rw-sDx" id="WJg-vr-QIr"/>
                                             <outlet property="imageOfPlace" destination="eiN-Ii-9HI" id="gz8-GJ-IV8"/>
                                             <outlet property="locationLabel" destination="Qry-nP-zmu" id="TKH-ot-NxN"/>
                                             <outlet property="nameLabel" destination="D7m-7H-HDM" id="MeO-US-Qvl"/>
@@ -310,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Yg-ih-cIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="560.79999999999995" y="117.39130434782609"/>
+            <point key="canvasLocation" x="559.4202898550725" y="117.1875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sFH-Uh-df7">
@@ -357,6 +430,9 @@
         <designable name="5cw-jZ-O18">
             <size key="intrinsicContentSize" width="252" height="44"/>
         </designable>
+        <designable name="8Ks-Rw-sDx">
+            <size key="intrinsicContentSize" width="90" height="14"/>
+        </designable>
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="FAV-pV-Sz7"/>
@@ -364,6 +440,10 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="camcel" width="128" height="128"/>
+        <image name="emptyStar" width="255" height="256"/>
+        <image name="filledStar" width="237.5" height="238"/>
+        <image name="map" width="50" height="50"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

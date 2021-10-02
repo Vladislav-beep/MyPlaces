@@ -13,6 +13,7 @@
 		B945ABB927059B3800E5C385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B945ABB827059B3800E5C385 /* Assets.xcassets */; };
 		B945ABBC27059B3800E5C385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B945ABBA27059B3800E5C385 /* LaunchScreen.storyboard */; };
 		B945ABC627059B8500E5C385 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B945ABC527059B8500E5C385 /* MainTableViewController.swift */; };
+		B95BE887270885F400552893 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95BE886270885F400552893 /* MapViewController.swift */; };
 		B98BBC0F27075EDB00888557 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BBC0E27075EDB00888557 /* RatingControl.swift */; };
 		B9A9F93F27070E660069CD97 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A9F93E27070E660069CD97 /* StorageManager.swift */; };
 		B9DE9ED82705D186001F0913 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DE9ED72705D186001F0913 /* CustomTableViewCell.swift */; };
@@ -31,6 +32,7 @@
 		B945ABBB27059B3800E5C385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B945ABBD27059B3800E5C385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B945ABC527059B8500E5C385 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		B95BE886270885F400552893 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B98BBC0E27075EDB00888557 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		B9A9F93E27070E660069CD97 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		B9DE9ED72705D186001F0913 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B9DE9ED72705D186001F0913 /* CustomTableViewCell.swift */,
 				B98BBC0E27075EDB00888557 /* RatingControl.swift */,
 				B945ABB527059B3800E5C385 /* Main.storyboard */,
+				B95BE886270885F400552893 /* MapViewController.swift */,
 				B9DE9EDD2705F378001F0913 /* NewPlaceTableViewController.swift */,
 				B945ABB827059B3800E5C385 /* Assets.xcassets */,
 				B945ABBA27059B3800E5C385 /* LaunchScreen.storyboard */,
@@ -224,6 +227,7 @@
 				B945ABB027059B3800E5C385 /* AppDelegate.swift in Sources */,
 				B945ABC627059B8500E5C385 /* MainTableViewController.swift in Sources */,
 				B9A9F93F27070E660069CD97 /* StorageManager.swift in Sources */,
+				B95BE887270885F400552893 /* MapViewController.swift in Sources */,
 				B98BBC0F27075EDB00888557 /* RatingControl.swift in Sources */,
 				B9DE9EDB2705DBC0001F0913 /* PlaceModel.swift in Sources */,
 				B9DE9ED82705D186001F0913 /* CustomTableViewCell.swift in Sources */,
