@@ -104,14 +104,7 @@ class NewPlaceTableViewController: UITableViewController {
     func savePlace() {
         let newPlace = Place()
         
-        var image: UIImage?
-        
-        if imageIsChanged {
-            image = placeImage.image
-        } else {
-            image = #imageLiteral(resourceName: "imagePlaceholder")
-        }
-        
+        let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "imagePlaceholder")
         let imageData = image?.pngData()
         
         newPlace.name = placeName.text!
@@ -173,6 +166,18 @@ extension NewPlaceTableViewController: UITextFieldDelegate {
             imageIsChanged = true
             
             dismiss(animated: true)
+        }
+        
+        // MARK: Navigation
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier != "showMap" { return }
+            
+            let mapVC = segue.destination as! MapViewController
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = placeLocation.text!
+            mapVC.place.type = placeType.text!
+            mapVC.place.imageData = placeImage.image?.pngData()
         }
     
 }
